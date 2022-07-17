@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+ion-icon[name=heart]{
+    fill: red;
+    transition: 1s all;
+}
 body{
     overflow-x: hidden;
     background-color: #FAFAFA;

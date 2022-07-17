@@ -1,22 +1,21 @@
 import Sidebarboxes from "./Sidebarboxes";
 
-export default function Sidebar(){
+export default function Sidebar(props){
+    let suggestions = [{url:"./assets/badvibesmemes 1.png", text: "bad.vibe.memes"}
+,{url:"./assets/chibirdart 1.png", text: "chibirdart"},{url:"./assets/razoesparaacreditar 1.png", text: "razoesparaacreditar"},
+{url:"./assets/adorableanimals 1.png", text: "adorable_animals"},{url:"./assets/smallcutecats 1.png", text: "smallcutecats"}];
     return(
         <div className="sidebar">
                 <div>
                     <div className="sidebartopbox">
-                        <img src="./assets/catanacomics 1.png"/>
-                        <p><em>catanacomics</em><br/>Catana</p> 
+                        <img src={props.url}/>
+                        <p><em>{props.name1}</em><br/>{props.name2}</p> 
                     </div>
                     <div className="sugestions">
                         <p>Sugestôes para você</p>
                         <p><em>Ver tudo</em></p>
                     </div>
-                    <Sidebarboxes url="./assets/badvibesmemes 1.png" text="bad.vibes.memes" />
-                    <Sidebarboxes url="./assets/chibirdart 1.png" text="chibirdart" />
-                    <Sidebarboxes url="./assets/razoesparaacreditar 1.png" text="razoesparaacreditar" />
-                    <Sidebarboxes url="./assets/adorableanimals 1.png" text="adorable_animals" />
-                    <Sidebarboxes url="./assets/smallcutecats 1.png" text="smallcutecats" />
+                    {suggestions.map(item => {return (<Sidebarboxes url={item.url} text={item.text} />)})}
                     <div className="sidebarbottombox">
                         <p>Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade •<br/>
                             Termos • Localizações •Contas mais relevantes •Hashtags •<br/>
